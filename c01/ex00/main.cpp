@@ -5,27 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/09 18:26:03 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/10 15:38:57 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
+#include "manage_Zombie.hpp"
 
 int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+	std::string	name = "";
+	Zombie		*zombie1;
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
+	std::cout << "Create zombie on heap" << std::endl;
+	zombie1 = newZombie("Ace");
+	zombie1->announce();
+	delete zombie1;
+	std::cout << "Create zombie on stack" << std::endl; 
+	randomChump("Ilan");
 	return (0);
 }

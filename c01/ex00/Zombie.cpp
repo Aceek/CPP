@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/09 18:06:18 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/09 19:22:10 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+Zombie::Zombie(std::string name) : _name(name) {
+	std::cout << "Zombie created : " << name << std::endl;
+}
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
-	return (0);
+Zombie::~Zombie() {
+	std::cout << "zombie destroyed : " << this->_name << std::endl;
+}
+
+void Zombie::announce(void) const {
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

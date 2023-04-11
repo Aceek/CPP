@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/09 17:48:36 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/10 16:32:50 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
+#include <iostream>
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+class Zombie {
+ private:
+	std::string _name;
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
-	return (0);
-}
+ public:
+	Zombie();
+	~Zombie();
+
+	void	announce(void) const;
+	void	setName(std::string name);
+};
+
+#endif

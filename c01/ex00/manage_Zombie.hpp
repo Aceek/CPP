@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   manage_Zombie.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/09 18:55:06 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/09 19:32:04 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef MANAGE_ZOMBIE_HPP
+# define MANAGE_ZOMBIE_HPP
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+#include "Zombie.hpp"
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
-	return (0);
-}
+Zombie	*newZombie( std::string name );
+void	randomChump( std::string name );
+
+
+#endif

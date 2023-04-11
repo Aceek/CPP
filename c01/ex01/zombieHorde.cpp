@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/10 15:21:35 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/10 16:33:28 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "Zombie.hpp"
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
-
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
+Zombie	*zombieHorde(int N, std::string name) {
+	Zombie *horde = new Zombie[N];
+	for (int i = 0; i < N; i++) {
+		horde[i].setName(name);
+		horde[i].announce();
 	}
-	return (0);
+	return (horde);
 }

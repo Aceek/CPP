@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/10 18:06:39 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/10 21:24:45 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "HumanA.hpp"
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+HumanA::HumanA(std::string name, Weapon &weapon) :_weapon(weapon), _name(name) {
+	std::cout << "HumanA created : " << this->_name << std::endl;
+}
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
-	return (0);
+HumanA::~HumanA() {
+	std::cout << "HumanA destroyed : " << this->_name << std::endl; 
+}
+
+void	HumanA::attack() const {
+	std::cout << this->_name << " attacks with their " << this->_weapon.getType() << std::endl;
 }

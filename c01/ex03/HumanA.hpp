@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/10 18:00:35 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/10 21:24:03 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+#include "Weapon.hpp"
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
-	return (0);
-}
+class HumanA {
+ private:
+	Weapon				&_weapon;
+	std::string			_name;
+ public:
+			HumanA(std::string name, Weapon &weapon);
+			~HumanA();
+	void	attack() const;
+
+};
+
+#endif

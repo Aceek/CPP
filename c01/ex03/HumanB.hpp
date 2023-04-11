@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/10 18:18:52 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/10 21:13:35 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-int	main() {
-	PhoneBook	repertoire;
-	std::string	input = "";
+#include "Weapon.hpp"
 
-	repertoire.starting();
-	while (input != "EXIT") {
-		if (input == "ADD") {
-			repertoire.addContact();
-		} else if (input == "SEARCH") {
-			repertoire.printContacts();
-			repertoire.search();
-		}
-		std::cout << "> ";
-		std::getline(std::cin, input);
-	}
-	return (0);
-}
+class HumanB {
+ private:
+	std::string			_name;
+	Weapon				*_weapon;
+ public:
+			HumanB(std::string name);
+			~HumanB();
+	void	attack() const;
+	void	setWeapon(Weapon &weapon);	
+};
+
+#endif
