@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:40:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/10 22:53:29 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:31:34 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 class Weapon
 {
  private:
-
 	std::string _string;
  public:
 						Weapon(std::string string);
