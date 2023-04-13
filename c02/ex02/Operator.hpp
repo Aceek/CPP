@@ -1,0 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Operator.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 17:46:16 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/13 19:45:07 by ilinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef OPERATOR_HPP
+# define OPERATOR_HPP
+
+#include "Fixed.hpp"
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
+
+#endif
