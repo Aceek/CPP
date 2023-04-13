@@ -6,12 +6,12 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/13 19:20:00 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/13 19:44:24 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef FIXED_HPP_
+# define FIXED_HPP_
 
 #include <iostream>
 #include <cmath>
@@ -21,17 +21,17 @@ class Fixed {
 	int	_value;
 	static const int	_fractionalBits = 8;
  public:
-	Fixed();
-	~Fixed();
-	Fixed(const int value);
-	Fixed(const float value);
-	Fixed(const Fixed &copy);
+	Fixed(void);
+	explicit Fixed(const int value);
+	explicit Fixed(const float value);
+	explicit Fixed(const Fixed &copy);
+	~Fixed(void);
+
 	float	toFloat(void) const;
 	int		toInt(void) const;
 	Fixed	&operator=(const Fixed &other);
-	// Fixed	&operator=(const float floatNb);
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };
 
-#endif
+#endif  // FIXED_HPP_
