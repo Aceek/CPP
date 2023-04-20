@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:02:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/20 01:56:29 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/20 02:30:57 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 }
 
 ClapTrap::ClapTrap(std::string name, int hitPoint, int energyPoint,
-		int attackDamage) : 
+		int attackDamage) :
 		_name(name), _hitPoint(hitPoint), _energyPoint(energyPoint),
 		_attackDamage(attackDamage)  {
 	std::cout << "Class ClapTrap created with name : " << _name
