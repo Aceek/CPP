@@ -6,12 +6,12 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:15:22 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/12 16:05:06 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 06:01:18 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP_
-# define HARL_HPP_
+#ifndef C01_EX06_HARL_HPP_
+#define C01_EX06_HARL_HPP_
 
 #include <iostream>
 #include <limits>
@@ -35,4 +35,4 @@ class Harl {
 	};
 };
 
-#endif
+#endif  // C01_EX06_HARL_HPP_

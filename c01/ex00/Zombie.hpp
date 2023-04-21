@@ -6,23 +6,23 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 17:48:36 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/09 19:29:39 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 05:50:14 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef C01_EX00_ZOMBIE_HPP_
+#define C01_EX00_ZOMBIE_HPP_
 #include <iostream>
 
 class Zombie {
-private:
+ private:
 	std::string _name;
 
-public:
-	Zombie(std::string name);
+ public:
+	explicit Zombie(std::string name);
 	~Zombie();
 
-	void	announce( void ) const;
+	void	announce(void) const;
 };
 
-#endif
+#endif  // C01_EX00_ZOMBIE_HPP_

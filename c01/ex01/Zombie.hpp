@@ -6,12 +6,12 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 17:48:36 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/10 16:32:50 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 05:51:56 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef C01_EX01_ZOMBIE_HPP_
+#define C01_EX01_ZOMBIE_HPP_
 #include <iostream>
 
 class Zombie {
@@ -26,4 +26,4 @@ class Zombie {
 	void	setName(std::string name);
 };
 
-#endif
+#endif  // C01_EX01_ZOMBIE_HPP_

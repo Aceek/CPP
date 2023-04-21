@@ -6,12 +6,12 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/13 17:01:49 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 05:45:51 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef C02_EX00_FIXED_HPP_
+#define C02_EX00_FIXED_HPP_
 
 #include <iostream>
 
@@ -28,4 +28,4 @@ class Fixed {
 	void	setRawBits(int const raw);
 };
 
-#endif
+#endif  // C02_EX00_FIXED_HPP_

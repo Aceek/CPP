@@ -6,12 +6,12 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/14 00:10:07 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 05:47:36 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP_
-# define FIXED_HPP_
+#ifndef C02_EX02_FIXED_HPP_
+#define C02_EX02_FIXED_HPP_
 
 #include <iostream>
 #include <cmath>
@@ -59,4 +59,4 @@ class Fixed {
 	static const Fixed &max(const Fixed &f1, const Fixed &f2);
 };
 
-#endif  // FIXED_HPP_
+#endif  // C02_EX02_FIXED_HPP_

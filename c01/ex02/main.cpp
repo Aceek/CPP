@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:17:05 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/10 17:38:21 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 05:52:29 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ int	main() {
 	std::cout << "Valeur de la string : " << brain << std::endl;
 	std::cout << "valeur pointée par pointeur : " << *pointeur << std::endl;
 	std::cout << "valeur pointée par la reference : " << ref << std::endl;
-	
 }

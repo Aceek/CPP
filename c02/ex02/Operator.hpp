@@ -6,15 +6,15 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 17:46:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/13 19:45:07 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 05:48:06 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPERATOR_HPP
-# define OPERATOR_HPP
+#ifndef C02_EX02_OPERATOR_HPP_
+# define C02_EX02_OPERATOR_HPP_
 
 #include "Fixed.hpp"
 
 std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
 
-#endif
+#endif  // C02_EX02_OPERATOR_HPP_
