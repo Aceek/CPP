@@ -6,16 +6,17 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:06:52 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/08 12:58:48 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/21 22:12:44 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cctype>
+
 
 void	ft_uppercase(std::string c) {
 	for (int i = 0; c[i] != '\0'; i++) {
-		if (c[i] >= 97 && c[i] <= 122)
-			c[i] = c[i] - 32;
+		c[i] = toupper(c[i]);
 	}
 	std::cout << c;
 }
