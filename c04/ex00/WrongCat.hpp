@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Chien.hpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 04:32:36 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/22 05:11:18 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/22 05:36:10 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/22 05:36:56 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHIEN_HPP_
-#define CHIEN_HPP_
+#ifndef WRONGCHAT_HPP_
+#define WRONGCHAT_HPP_
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Chien : public Animal {
+class WrongChat : public WrongAnimal {
  public:
-	Chien(void);
-	Chien(const Chien &chien);
-	~Chien(void);
+	WrongChat(void);
+	WrongChat(const WrongChat &chat);
+	~WrongChat(void);
 
-	Chien			&operator=(const Chien &chien);
-	virtual void	makeSound(void) const;
+	WrongChat			&operator=(const WrongChat &chat);
+	virtual void		makeSound() const;
 
  private:
 };
 
-#endif  // CHIEN_HPP_
-
+#endif  // CHAT_HPP_

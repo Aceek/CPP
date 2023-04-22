@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Chat.hpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 04:23:28 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/22 05:11:12 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/22 05:53:11 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHAT_HPP_
-#define CHAT_HPP_
+#ifndef CAT_HPP_
+#define CAT_HPP_
 
 #include "Animal.hpp"
 
-class Chat : public Animal {
+class Cat : public Animal {
  public:
-	Chat(void);
-	Chat(const Chat &chat);
-	~Chat(void);
+	Cat(void);
+	Cat(const Cat &cat);
+	~Cat(void);
 
-	Chat			&operator=(const Chat &chat);
+	Cat			&operator=(const Cat &cat);
 	virtual void	makeSound() const;
 
  private:
 };
 
-#endif  // CHAT_HPP_
+#endif  // CAT_HPP_
