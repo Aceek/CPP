@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 23:00:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 00:47:13 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/22 22:24:15 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/22 22:36:03 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C03_EX02_FRAGTRAP_HPP_
-#define C03_EX02_FRAGTRAP_HPP_
+#ifndef BRAIN_HPP_
+#define BRAIN_HPP_
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class FragTrap : public ClapTrap {
- private:
+class Brain {
  public:
-	FragTrap(void);
-	explicit FragTrap(std::string name);
-	FragTrap(const FragTrap &other);
-	~FragTrap(void);
+	Brain(void);
+	Brain(const Brain &other);
+	~Brain();
 
-	FragTrap &operator=(const FragTrap &other);
-	void highFivesGuys(void);
+	Brain	&operator=(const Brain &other);
+ 
+ private:
+	std::string ideas[100];
 };
 
-#endif  // C03_EX02_FRAGTRAP_HPP_
+#endif  // BRAIN_HPP_

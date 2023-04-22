@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 23:00:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 00:47:13 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/22 04:32:36 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/22 22:36:49 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C03_EX02_FRAGTRAP_HPP_
-#define C03_EX02_FRAGTRAP_HPP_
+#ifndef DOG_HPP_
+#define DOG_HPP_
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
 
-class FragTrap : public ClapTrap {
- private:
+class Dog : public Animal {
  public:
-	FragTrap(void);
-	explicit FragTrap(std::string name);
-	FragTrap(const FragTrap &other);
-	~FragTrap(void);
+	Dog(void);
+	Dog(const Dog &dog);
+	~Dog(void);
 
-	FragTrap &operator=(const FragTrap &other);
-	void highFivesGuys(void);
+	Dog			&operator=(const Dog &dog);
+	virtual void	makeSound(void) const;
+
+ private:
+	Brain	*brain;
+ 
 };
 
-#endif  // C03_EX02_FRAGTRAP_HPP_
+#endif  // DOG_HPP_
+

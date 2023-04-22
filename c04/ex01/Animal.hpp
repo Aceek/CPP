@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/19 23:00:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 00:47:13 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/22 03:54:17 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/22 22:35:53 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C03_EX02_FRAGTRAP_HPP_
-#define C03_EX02_FRAGTRAP_HPP_
+#ifndef ANIMAL_HPP_
+#define ANIMAL_HPP_
 
-#include "ClapTrap.hpp"
+#include <iostream>
+#include "Brain.hpp"
 
-class FragTrap : public ClapTrap {
- private:
+class Animal {
  public:
-	FragTrap(void);
-	explicit FragTrap(std::string name);
-	FragTrap(const FragTrap &other);
-	~FragTrap(void);
+	Animal(void);
+	Animal(std::string type);
+	Animal(const Animal &animal);
+	virtual ~Animal();
 
-	FragTrap &operator=(const FragTrap &other);
-	void highFivesGuys(void);
+	Animal			&operator=(const Animal &animal);
+	virtual void	makeSound(void) const;
+	std::string		getType(void) const;
+
+
+ private:
+	std::string _type;
 };
 
-#endif  // C03_EX02_FRAGTRAP_HPP_
+
+#endif  // ANIMAL_HPP_
