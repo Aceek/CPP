@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:22:40 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 04:47:50 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/23 23:20:19 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Ice : public AMateria {
 	Ice	&operator=(const Ice &other);
 
 	virtual AMateria* clone() const;
-	// virtual void use(ICharacter& target);
+	virtual void use(ICharacter& target);
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:27:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 04:47:57 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/23 23:19:37 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ AMateria *Cure::clone() const {
 	return (new Cure(*this));
 }
 
-// void Cure::use(ICharacter& target) {
-// 	std::cout << "* heals " << taget.name << "'s wounds *" << std::endl;
-// }
+void Cure::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+}

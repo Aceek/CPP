@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:27:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 04:47:49 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/23 23:20:28 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ AMateria *Ice::clone() const {
 	return (new Ice(*this));
 }
 
-// void Ice::use(ICharacter& target) {
-// 	std::cout << "* shoots an ice bolt at " << taget.name << " *" << std::endl;
-// }
+void Ice::use(ICharacter& target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}

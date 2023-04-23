@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.hpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/23 04:22:40 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 23:19:53 by ilinhard         ###   ########.fr       */
+/*   Created: 2023/04/24 00:16:05 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/24 00:40:54 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CURE_HPP_
-#define CURE_HPP_
+#ifndef MATERIASOURCE_HPP_
+#define MATERIASOURCE_HPP_
 
+#include "IMateriaSource.hpp"
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
 #include "Character.hpp"
 
-class Cure : public AMateria {
- private:
- 
+class MateriaSource : public IMateriaSource {
  public:
-	Cure();
-	Cure(const Cure &other);
-	~Cure();
+	MateriaSource();
+	MateriaSource(const MateriaSource &other);
+	~MateriaSource();
 
-	Cure	&operator=(const Cure &other);
+	MateriaSource	&operator=(const MateriaSource &other);
 
-	virtual AMateria* clone() const;
-	virtual void use(ICharacter& target);
+	virtual void			learnMateria(AMateria *other);
+	virtual AMateria		*createMateria(std::string const &type);
+ private:
+	AMateria	*invetory[INVENTORY_SIZE];
 
 };
 
-#endif  // CURE_HPP_
+
+#endif  // MATERIASOURCE_HPP_
