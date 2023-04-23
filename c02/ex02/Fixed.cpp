@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:02:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/14 00:09:28 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/23 03:04:45 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,5 +138,5 @@ Fixed	&Fixed::min(Fixed &f1, Fixed &f2) {
 }
 
 Fixed	&Fixed::max(Fixed &f1, Fixed &f2) {
-	return (f1 < f2 ? f1 : f2);
+	return (f1 > f2 ? f1 : f2);
 }

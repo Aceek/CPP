@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:45:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/14 00:14:21 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/23 03:03:29 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@
 // }
 
 int main() {
-    Fixed a(2.3f);
-    Fixed b(3.7f);
-
+			Fixed a(2.3f);
+			Fixed b(3.7f);
+    const	Fixed g(5.3f);
+    const	Fixed h(6.7f);
     // Test de l'opérateur +
     Fixed c = a + b;
     std::cout << "a + b = " << c << std::endl;
@@ -63,6 +64,12 @@ int main() {
     std::cout << "a = " << a << std::endl;
     std::cout << "--a = " << --a << std::endl;
     std::cout << "a = " << a << std::endl;
+
+	std::cout << "max =  " << Fixed::max(a, b) << std::endl;
+	std::cout << "min =  " << Fixed::min(a, b) << std::endl;
+
+	std::cout << "max =  " << Fixed::max(g, h) << std::endl;
+	std::cout << "min =  " << Fixed::min(g, h) << std::endl;
 
     return 0;
 }
