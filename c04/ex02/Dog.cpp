@@ -12,12 +12,12 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void) : Animal("dog") {
+Dog::Dog(void) : AAnimal("dog") {
 	std::cout << "Class Dog constructor called" << std::endl;
 	this->brain = new Brain();
 }
 
-Dog::Dog(const Dog &dog) : Animal(dog) {
+Dog::Dog(const Dog &dog) : AAnimal(dog) {
 	std::cout << "Class Dog copy constructor called" << std::endl;
 	*this = dog;
 }
@@ -30,7 +30,7 @@ Dog::~Dog(void) {
 Dog	&Dog::operator=(const Dog &dog) {
 	std::cout << "Class Dog Operator affectation called" << std::endl;
 	if (this != &dog) {
-		Animal::operator=(dog);
+		AAnimal::operator=(dog);
 		delete this->brain;
 		this->brain = new Brain(*dog.brain);
 	}

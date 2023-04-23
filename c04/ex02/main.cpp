@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 04:46:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 02:11:14 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/23 02:23:16 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,27 @@
 int main()
 {
 
-	Animal *test[SIZE];
+	Cat *cat1 = new Cat;
+	Cat *cat2 = new Cat;
+	Dog *dog1 = new Dog;
+	Dog test(*dog1);
+	(void)test;
 
-	for (int i = 0; i < SIZE; i++) {
-		if (i < SIZE/2) {
-			test[i] = new Dog;
-		} else {
-			test[i] = new Cat;
-		}
-	}
+	cat1->operator=(*cat2);
 
-	for (int i = 0; i < SIZE; i++) {
-			delete test[i];
-	}
-
-	Animal *test1 = new Cat;
-	Animal *test2 = new Cat;
-
-	dynamic_cast<Cat*>(test1)->operator=(*dynamic_cast<Cat*>(test2));
+	delete cat1;
+	delete cat2;
+	delete dog1;
 
 
-	delete test1;
-	delete test2;
-
-
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Dog* j = new Dog();
+	const Cat* i = new Cat();
 	const Cat	*k = new Cat();
 
 
 	delete j;//should not create a leak
 	delete i;
 	delete k;
-
-
 
 	return 0;
 }
