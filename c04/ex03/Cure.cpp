@@ -6,14 +6,14 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:27:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 23:19:37 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 03:55:04 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "includes.hpp"
 
 Cure::Cure() : AMateria("cure") {
-	std::cout << "Class Cure constructor called" << std::endl;
+	// std::cout << "Class Cure constructor called" << std::endl;
 }
 
 Cure::Cure(const Cure &other) {
@@ -21,7 +21,7 @@ Cure::Cure(const Cure &other) {
 }
 
 Cure::~Cure() {
-	std::cout << "Class Cure destructor called" << std::endl;
+	// std::cout << "Class Cure destructor called" << std::endl;
 }
 
 Cure	&Cure::operator=(const Cure &other) {

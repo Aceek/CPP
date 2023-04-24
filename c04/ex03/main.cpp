@@ -6,18 +6,15 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 00:36:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 00:41:52 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 03:55:55 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "IMateriaSource.hpp"
-#include "MateriaSource.hpp"
-#include "Ice.hpp"
-#include "Cure.hpp"
+#include "includes.hpp"
 
 int	main()
 {
+	/*TEST 1 */
 	IMateriaSource* src = new MateriaSource();
 	src->learnMateria(new Ice());
 	src->learnMateria(new Cure());
@@ -33,5 +30,30 @@ int	main()
 	delete bob;
 	delete me;
 	delete src;
-	return 0;
+
+
+	/*TEST 2 */
+	IMateriaSource *src1 = new MateriaSource();
+	src1->learnMateria(new Ice());
+	src1->learnMateria(new Cure());
+	src1->learnMateria(new Cure());
+	src1->learnMateria(new Cure());
+	src1->learnMateria(new Cure());
+
+	ICharacter *me1 = new Character("me");
+	ICharacter *notme = new Character("notme");
+
+	AMateria *tmp1;
+	tmp1 = src1->createMateria("ice");
+	me1->equip(tmp1);
+	me1->unequip(0);
+	me1->equip(tmp1);
+	me1->use(0, *me1);
+	me1->use(1, *me1);
+	
+	//delete tmp1;
+	delete notme;
+	delete src1;
+	delete me1;
+
 }

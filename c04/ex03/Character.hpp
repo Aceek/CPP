@@ -6,15 +6,15 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:55:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 23:32:41 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 03:54:57 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARCTER_HPP_
 #define CHARCTER_HPP_
 
-#include "AMateria.hpp"
-#include "ICharacter.hpp"
+#include "includes.hpp"
+
 #define INVENTORY_SIZE 4
 
 class Character : public ICharacter {
@@ -24,7 +24,7 @@ class Character : public ICharacter {
 	~Character(void);
 	Character(const Character &other);
 
-	virtual Character &operator=(const Character &other);
+	Character &operator=(const Character &other);
 
 	virtual std::string const & getName() const;
 	virtual void equip(AMateria* m);

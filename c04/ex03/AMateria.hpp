@@ -6,18 +6,20 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:07:25 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 23:48:33 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 03:54:36 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP_
 #define AMATERIA_HPP_
 
-#include <iostream>
-#include "ICharacter.hpp"
+// #include <iostream>
+// #include "ICharacter.hpp"
+#include "includes.hpp"
 
-class AMateria
-{
+class ICharacter;
+
+class AMateria {
  protected:
 	std::string	_type;
  public:

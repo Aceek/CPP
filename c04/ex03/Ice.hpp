@@ -6,14 +6,14 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:22:40 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 23:20:19 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 03:55:28 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP_
 #define ICE_HPP_
 
-#include "AMateria.hpp"
+#include "includes.hpp"
 
 class Ice : public AMateria {
  private:
