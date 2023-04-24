@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:44:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 17:34:31 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 22:42:47 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int	main() {
 		}
 		std::cout << "> ";
 		std::getline(std::cin, input);
+		if (std::cin.eof()) {
+			std::cout << "End of file reache" << std::endl;
+			break;
+		}
 	}
 	return (0);
 }

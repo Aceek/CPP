@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 14:39:20 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/08 19:11:40 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 22:46:51 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,9 @@ int	PhoneBook::_getInput(void) const {
 			std::cin.clear();
 		}
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		if (std::cin.eof()) {
+			return (42) ;
+		}
 	}
 	return (index);
 }

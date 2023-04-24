@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 00:51:26 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 03:54:07 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/24 03:57:38 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,5 @@
 #include "Ice.hpp"
 #include "IMateriaSource.hpp"
 #include "MateriaSource.hpp"
-
-
 
 #endif // INCLUDES_HPP_
