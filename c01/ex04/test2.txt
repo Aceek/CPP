@@ -1,0 +1,9 @@
+Bienvenue dans le merveilleux monde de la programmation ! Vous êtes sur le point d'apprendre des concepts et des techniques incroyables pour créer des logiciels et des applications qui changeront le monde.
+
+Cependant, il y a quelques pièges à éviter. Il peut être facile de se perdre dans les détails et de se concentrer sur des éléments mineurs plutôt que de se concentrer sur l'objectif global. Ne vous laissez pas distraire par des choses qui ne sont pas importantes.
+
+Rappelez-vous également que la programmation est un art autant qu'une science. Il n'y a pas de solution unique pour chaque problème. Les meilleures solutions sont souvent celles qui sont élégantes et simples, plutôt que complexes et maladroites.
+
+Enfin, ne sous-estimez jamais la puissance de la pratique. Plus vous pratiquez, plus vous deviendrez à l'aise avec la programmation. Essayez de résoudre des problèmes de plus en plus difficiles, travaillez sur des projets personnels et impliquez-vous dans des communautés de programmation.
+
+Avec ces conseils à l'esprit, vous êtes prêt à commencer votre voyage dans le monde de la programmation. Bonne chance et amusez-vous bien !

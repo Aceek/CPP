@@ -5,7 +5,7 @@ SRCS = main.cpp manage_Zombie.cpp Zombie.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = zombie
 
-HEADER = mange_Zombie.hpp
+HEADER = manage_Zombie.hpp Zombie.hpp
 INCLUDES = -I.
 
 all: $(NAME)

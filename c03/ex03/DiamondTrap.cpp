@@ -6,13 +6,14 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:12:19 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/21 05:34:22 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/25 02:59:00 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() {
+	this->_name = "default";
 	std::cout << "Class DiamondTrap created base on ScavTrap, FragTrap class"
 			<< std::endl;
     FragTrap::_hitPoint = 100;
@@ -22,6 +23,7 @@ DiamondTrap::DiamondTrap() : ClapTrap(), ScavTrap(), FragTrap() {
 
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"),
 		ScavTrap(name), FragTrap(name), _name(name) {
+		this->_name = name;
 	std::cout << "Class DiamondTrap created with name : " << _name
 		<< " base on ScavTrap, FragTrap class" << std::endl;
     FragTrap::_hitPoint = 100;
@@ -43,6 +45,7 @@ DiamondTrap	&DiamondTrap::operator=(const DiamondTrap &other) {
 		ClapTrap::operator=(other);
 		ScavTrap::operator=(other);
 		FragTrap::operator=(other);
+		this->_name = other._name;
 	}
 	return (*this);
 }

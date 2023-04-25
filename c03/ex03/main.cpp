@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 05:54:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 05:54:48 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/25 02:57:43 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int main() {
     DiamondTrap diam("Sylvain");
     DiamondTrap diam2("Michel");
     DiamondTrap diam3(diam);
-    DiamondTrap diam4 = diam2;
+    DiamondTrap diam4;
+	diam4.operator=(diam2);
     std::cout << std::endl;
 
     diam.attack("enemy");

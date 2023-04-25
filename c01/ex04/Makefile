@@ -1,34 +1,25 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/14 14:11:00 by aperez-b          #+#    #+#              #
-#    Updated: 2023/04/11 02:48:30 by ilinhard         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-SRC = main.cpp
-OBJ = $(SRC:.cpp=.o)
 CC = c++
-RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
+SRCS = main.cpp
+OBJS = $(SRCS:.cpp=.o)
 NAME = replace
+
+HEADER =
+INCLUDES = -I.
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp $(HEADER)
+	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	rm -f $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -f $(NAME)
 
-re: fclean $(NAME)
-
-.PHONY: all clean fclean re
+re: fclean all

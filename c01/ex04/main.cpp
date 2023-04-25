@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 23:50:07 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/11 03:08:56 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/25 03:07:40 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ int	main(int ac, char **av) {
 		std::cout << "Error args numbers" << std::endl;
 		return (1);
 	}
+	if (!av[2][0]) {
+		std::cout << "Can't replacing void" << std::endl;
+		return (1);
+	}
 	fileIn.open(av[1]);
 	if (!fileIn.is_open()) {
 		std::cout << "impossible d'ouvir le fichier : " << av[1] << std::endl;
@@ -48,6 +52,7 @@ int	main(int ac, char **av) {
 	fileOut.open((std::string(av[1]) + ".replace").c_str());
 	if (!fileOut.is_open()) {
 		std::cout << "impossible d'ouvir le fichier outfile.txt" << std::endl;
+		fileIn.close();
 		return (1);
 	}
 	replaceFile(fileIn, fileOut, av);
