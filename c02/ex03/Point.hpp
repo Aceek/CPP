@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 05:22:53 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/25 06:23:40 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 03:29:41 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define POINT_HPP
 
 #include "Fixed.hpp"
-
 
 class Point {
  public:
@@ -25,10 +24,14 @@ class Point {
 
 	Point	&operator=(const Point &point);
 
+	const Fixed	&getX(void) const;
+	const Fixed	&getY(void) const;
+
  private:
 	const Fixed _x;
 	const Fixed _y;
 };
 
+bool bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif  // POINT_HPP_

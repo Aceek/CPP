@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/25 05:51:52 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 04:18:15 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Fixed {
  public:
 	Fixed(void);
 	Fixed(const Fixed &copy);
-	explicit Fixed(const int value);
-	explicit Fixed(const float value);
+	Fixed(const int value);
+	Fixed(const float value);
 
 	~Fixed(void);
 
@@ -57,6 +57,9 @@ class Fixed {
 	static Fixed &max(Fixed &f1, Fixed &f2);
 	static const Fixed &min(const Fixed &f1, const Fixed &f2);
 	static const Fixed &max(const Fixed &f1, const Fixed &f2);
+
 };
+
+
 
 #endif  // C02_EX02_FIXED_HPP_

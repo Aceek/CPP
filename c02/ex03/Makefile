@@ -1,11 +1,11 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Fixed.cpp Operator.cpp Point.cpp
+SRCS = main.cpp Fixed.cpp  Point.cpp bsp.cpp Operator.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = fixed
 
-HEADER = Fixed.hpp Operator.hpp Point.hpp
+HEADER = Fixed.hpp  Point.hpp Operator.hpp
 INCLUDES = -I.
 
 all: $(NAME)

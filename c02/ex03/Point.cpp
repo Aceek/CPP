@@ -6,12 +6,11 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 05:27:25 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/25 06:21:56 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 04:02:59 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-#include "Operator.hpp"
 
 Point::Point() : _x(Fixed(0)), _y(Fixed(0)) {}
 
@@ -23,7 +22,7 @@ Point::Point(const Point &point) {
 	*this = point;
 }
 
-Point & Point::operator=(const Point & rhs)
+Point	&Point::operator=(const Point & rhs)
 {
     if(this != &rhs)
     {
@@ -33,4 +32,12 @@ Point & Point::operator=(const Point & rhs)
         *ptry = rhs._y;
     }
     return (*this);
+}
+
+const Fixed	&Point::getX(void) const {
+	return (this->_x);
+}
+
+const Fixed	&Point::getY(void) const {
+	return (this->_y);
 }
