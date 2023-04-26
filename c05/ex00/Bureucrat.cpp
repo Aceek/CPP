@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:47:41 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 05:18:06 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 07:13:17 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,15 @@ Bureucrat::Bureucrat() : _name("default"), _grade(150) {
 			<< this->_grade << std::endl;
 }
 
-Bureucrat::Bureucrat(std::string name, unsigned int grade) : _name(name) {
-	try {
-		if (grade < 1 || grade > 150) {
-			throw std::runtime_error("Error grade must be >= 1 && <= 150");
-		}
-		this->_grade = grade;
-	} catch (std::exception& e) {
-		e.what();
-		
+Bureucrat::Bureucrat(std::string name, int grade) : _name(name) {
+	if (grade < 1) {
+		throw Bureucrat::GradeTooHighExeption();
+	} else if (grade > 150) {
+		throw Bureucrat::GradeTooLowException();
 	}
+	_grade = grade;
+	std::cout << "Bureucrat create with name " << this->_name << " and grade "
+		<< this->_grade << std::endl;
 }
 
 Bureucrat::Bureucrat(const Bureucrat &other) {
@@ -39,8 +38,8 @@ Bureucrat::~Bureucrat() {
 
 Bureucrat	&Bureucrat::operator=(const Bureucrat &other) {
 	if (this != &other) {
-		std::string *tmp = const_cast<std::string*>(_name);
-		this->_name = other._name;
+		std::string *tmp = const_cast<std::string*>(&this->_name);
+		*tmp = other._name;
 		this->_grade = other._grade;
 	}
 	return (*this);
@@ -50,6 +49,32 @@ std::string	Bureucrat::getName() const {
 	return (this->_name);
 }
 
-unsigned int	Bureucrat::getGrade() const {
+int	Bureucrat::getGrade() const {
 	return (this->_grade);
+}
+
+void	Bureucrat::gradation() {
+	if ((this->_grade - 1) < 1) {
+		throw Bureucrat::GradeTooHighExeption();
+	}
+	this->_grade -= 1;
+	std::cout << this->getName() << " Promoted ! New grade : "
+			<< this->getGrade() << std::endl;
+}
+
+void	Bureucrat::retrogradation() {
+	if ((this->_grade + 1) > 150) {
+		throw Bureucrat::GradeTooLowException();
+	}
+	this->_grade += 1;
+	std::cout << this->getName() << "Retrograded :(. New grade : "
+			<< this->getGrade() << std::endl;
+}
+
+const char* Bureucrat::GradeTooHighExeption::what() const throw() {
+	return ("Grade too high for Bureucrat");
+}
+
+const char* Bureucrat::GradeTooLowException::what() const throw() {
+	return ("Grade too low for Bureucrat");
 }
