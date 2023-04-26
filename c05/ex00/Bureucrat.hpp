@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:34:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 07:15:07 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 07:25:55 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ class Bureucrat {
 		virtual const char* what() const throw();
 	};
 };
+
+std::ostream &operator<<(std::ostream& os, const Bureucrat &b);
 
 #endif  // C05_EX00_BUREUCRAT_HPP_
