@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:34:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 04:57:51 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 05:12:24 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@
 class Bureucrat {
 
  public:
-	Bureucrat()
+	Bureucrat();
 	Bureucrat(std::string name, unsigned int grade);
 	Bureucrat(const Bureucrat &other);
 	~Bureucrat();
 	
 	Bureucrat		&operator=(const Bureucrat &other);
 
-	std::string		&getName() const;
+	std::string		getName() const;
 	unsigned int	getGrade() const;
  private:
 	std::string const	_name;

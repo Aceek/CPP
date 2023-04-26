@@ -1,11 +1,11 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS = main.cpp Bureucrat.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = horde
+NAME = bureucrat
 
-HEADER = Zombie.hpp
+HEADER = Bureucrat.hpp
 INCLUDES = -I.
 
 all: $(NAME)

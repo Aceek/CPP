@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:27:21 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/12 15:42:25 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 05:26:00 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ void	Harl::error(void) {
 }
 
 void	Harl::complain(std::string level) {
+	if (level == "EXIT")
+		return ;
 	typedef void (Harl::*harlComplain)();
 	harlComplain complain[] =
 		{&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -51,7 +53,10 @@ void	Harl::complain(std::string level) {
 
 	for (int i = 0;
 		i < static_cast<int>(sizeof(levels) / sizeof(levels[0])); i++) {
-		if (level == levels[i])
+		if (level == levels[i]) {
 			(this->*complain[i])();
+			return ;
+		}
 	}
+	std::cout << "Not valid command" << std::endl;
 }

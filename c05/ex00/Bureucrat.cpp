@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:47:41 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 05:02:28 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 05:18:06 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ Bureucrat::Bureucrat(std::string name, unsigned int grade) : _name(name) {
 			throw std::runtime_error("Error grade must be >= 1 && <= 150");
 		}
 		this->_grade = grade;
-	} catch (std::exeption& e) {
+	} catch (std::exception& e) {
 		e.what();
 		
 	}
 }
-
 
 Bureucrat::Bureucrat(const Bureucrat &other) {
 	*this = other;
@@ -40,13 +39,14 @@ Bureucrat::~Bureucrat() {
 
 Bureucrat	&Bureucrat::operator=(const Bureucrat &other) {
 	if (this != &other) {
-		this->_name = other.getName();
-		this->_grade = other.getGrade();
+		std::string *tmp = const_cast<std::string*>(_name);
+		this->_name = other._name;
+		this->_grade = other._grade;
 	}
 	return (*this);
 }
 
-std::string	&Bureucrat::getName() const {
+std::string	Bureucrat::getName() const {
 	return (this->_name);
 }
 
