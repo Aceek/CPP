@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/21 05:45:51 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 00:48:04 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class Fixed {
  private:
-	int	_value;
-	const int	_fractionalBits;
+	int					_value;
+	const static int	_fractionalBits = 8;
  public:
 	Fixed();
 	~Fixed();
