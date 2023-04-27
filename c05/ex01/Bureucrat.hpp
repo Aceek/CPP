@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:34:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 07:25:55 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 04:10:20 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define C05_EX00_BUREUCRAT_HPP_
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureucrat {
  private:
@@ -33,6 +36,7 @@ class Bureucrat {
 
 	void	gradation();
 	void	retrogradation();
+	void	signForm(Form &f);
 
 /*EXEPTION CLASS*/
 

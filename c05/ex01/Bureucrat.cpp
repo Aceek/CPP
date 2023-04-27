@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:47:41 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 07:31:50 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 04:55:48 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,20 @@ void	Bureucrat::retrogradation() {
 			<< this->getGrade() << std::endl;
 }
 
+void	Bureucrat::signForm(Form &f) {
+	try
+	{
+		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->getName() << " coouldn't sign " << f.getName()
+				<< " because "<<  e.what() << std::endl;
+	}
+}
+
+
 const char* Bureucrat::GradeTooHighExeption::what() const throw() {
 	return ("Grade too high for Bureucrat");
 }
@@ -80,6 +94,6 @@ const char* Bureucrat::GradeTooLowException::what() const throw() {
 }
 
 std::ostream &operator<<(std::ostream& os, const Bureucrat &b) {
-	os << b.getName() << ", bureucrat grade " << b.getGrade() << std::endl;
+	os << b.getName() << ", bureucrat grade " << b.getGrade();
 	return (os);
 }

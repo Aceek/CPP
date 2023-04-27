@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:38:32 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 23:57:03 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 04:56:28 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,13 @@ Form::Form() : _name("default"), _validate(false), _signedGrade(1), _executeGrad
 
 Form::Form(int signedGrade, int executeGrade, std::string name) : _name(name),
 	_validate(false) {
-	
+	if (signedGrade < 1 || executeGrade < 1) {
+		throw Form::GradeTooHighException();
+	} else if (signedGrade > 150 || executeGrade > 150) {
+		throw Form::GradeTooLowException();
+	}
+	_signedGrade = signedGrade;
+	_executeGrade = executeGrade;
 }
 
 Form::Form(const Form &other) {
@@ -41,18 +47,46 @@ Form	&Form::operator=(const Form &other) {
 	return (*this);
 }
 
-std::string	Form::getName() {
+const std::string	&Form::getName() const {
 	return (this->_name);
 }
 
-bool		Form::getValidate() {
+const bool		&Form::getValidate() const {
 	return (this->_validate);
 }
 
-int			Form::getSignedGrade() {
+const int			&Form::getSignedGrade() const {
 	return (this->_signedGrade);
 }
 
-int			Form::getExecuteGrade() {
+const int			&Form::getExecuteGrade() const {
 	return (this->_executeGrade);
+}
+
+void				Form::beSigned(const Bureucrat &b) {
+	if (b.getGrade() <= this->getSignedGrade()) {
+		this->_validate = true;
+	} else {
+		throw Form::GradeTooLowException();
+	}
+}
+
+std::ostream &operator<<(std::ostream& os, const Form &f) {
+	if (f.getValidate()){
+		os << "Form signed ";
+	} else {
+		os << "Form not signed ";
+	}
+	os << "named " << f.getName() << " grade require to signe : "
+			<< f.getSignedGrade() << " grade require to execute : "
+			<< f.getExecuteGrade();
+	return (os);
+}
+
+const char* Form::GradeTooHighException::what() const throw() {
+	return ("Grade too hight form");
+}
+
+const char* Form::GradeTooLowException::what() const throw() {
+	return ("Grade too low form");
 }

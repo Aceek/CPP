@@ -1,11 +1,11 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureucrat.cpp
+SRCS = main.cpp Bureucrat.cpp Form.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = bureucrat
 
-HEADER = Bureucrat.hpp
+HEADER = Bureucrat.hpp Form.hpp
 INCLUDES = -I.
 
 all: $(NAME)
