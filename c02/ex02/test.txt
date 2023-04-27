@@ -1,0 +1,279 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 16:02:46 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/27 01:24:08 by ilinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Fixed.hpp"
+
+Fixed::Fixed() : _value(0) {
+}
+
+Fixed::~Fixed() {
+}
+
+Fixed::Fixed(const Fixed &copy) {
+	 *this = copy;
+}
+
+Fixed::Fixed(const int value) {
+	this->_value = value * (1 << this->_fractionalBits);
+}
+
+Fixed::Fixed(const float value) :
+		_value(roundf(value * (1 << this->_fractionalBits))) {
+}
+
+Fixed	&Fixed::operator=(const Fixed &other) {
+	if (this != &other) {
+		this->_value = other.getRawBits();
+	}
+	return (*this);
+}
+
+int		Fixed::getRawBits() const {
+	return (this->_value);
+}
+
+void	Fixed::setRawBits(int const raw) {
+	this->_value = raw;
+}
+
+float	Fixed::toFloat(void) const {
+	float	floatNb;
+
+	floatNb = static_cast<float>(this->getRawBits()) /
+		static_cast<float>(1 << _fractionalBits);
+	return (floatNb);
+}
+
+int	Fixed::toInt(void) const {
+	return (this->_value >> _fractionalBits);
+}
+
+bool	Fixed::operator<(const Fixed &other) const {
+	return (this->getRawBits() < other.getRawBits());
+}
+
+bool	Fixed::operator>(const Fixed &other) const {
+	return (this->getRawBits() > other.getRawBits());
+}
+
+bool	Fixed::operator==(const Fixed &other) const {
+	return (this->getRawBits() == other.getRawBits());
+}
+
+bool	Fixed::operator!=(const Fixed &other) const {
+	return (this->getRawBits() != other.getRawBits());
+}
+
+bool	Fixed::operator<=(const Fixed &other) const {
+	return (this->getRawBits() <= other.getRawBits());
+}
+
+bool	Fixed::operator>=(const Fixed &other) const {
+	return (this->getRawBits() >= other.getRawBits());
+}
+
+Fixed	Fixed::operator+(const Fixed &other) const {
+	Fixed		tmp;
+	const int	sum = this->getRawBits() + other.getRawBits();
+	tmp.setRawBits(sum);
+	return (tmp);
+}
+
+Fixed	Fixed::operator-(const Fixed &other) const {
+	Fixed		tmp;
+	const int	sum = this->getRawBits() - other.getRawBits();
+	tmp.setRawBits(sum);
+	return (tmp);
+}
+
+Fixed	Fixed::operator*(const Fixed &other) const {
+	return (Fixed(this->toFloat() * other.toFloat()));
+}
+
+Fixed	Fixed::operator/(const Fixed &other) const {
+	return (Fixed(this->toFloat() / other.toFloat()));
+}
+
+Fixed	&Fixed::operator++(void) {
+	this->setRawBits(this->getRawBits() + 1);
+	return (*this);
+}
+
+Fixed	&Fixed::operator--(void) {
+	this->setRawBits(this->getRawBits() - 1);
+	return (*this);
+}
+
+Fixed	Fixed::operator++(int) {
+	Fixed	tmp(*this);
+	++(*this);
+	return (tmp);
+}
+
+Fixed	Fixed::operator--(int) {
+	Fixed	tmp(*this);
+	--(*this);
+	return (tmp);
+}
+
+const Fixed	&Fixed::min(const Fixed &f1, const  Fixed &f2) {
+	return (f1 < f2 ? f1 : f2);
+}
+
+const Fixed	&Fixed::max(const Fixed &f1, const  Fixed &f2) {
+	return (f1 > f2 ? f1 : f2);
+}
+
+Fixed	&Fixed::min(Fixed &f1, Fixed &f2) {
+	return (f1 < f2 ? f1 : f2);
+}
+
+Fixed	&Fixed::max(Fixed &f1, Fixed &f2) {
+	return (f1 > f2 ? f1 : f2);
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
+	out << fixed.toFloat();
+	return (out);
+}
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/27 02:24:42 by ilinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef C02_EX02_FIXED_HPP_
+#define C02_EX02_FIXED_HPP_
+
+#include <iostream>
+#include <cmath>
+
+class Fixed {
+ private:
+	int					_value;
+	static const int	_fractionalBits = 8;
+
+ public:
+	Fixed(void);
+	Fixed(const Fixed &copy);
+	explicit Fixed(const int value);
+	explicit Fixed(const float value);
+
+	~Fixed(void);
+
+	float	toFloat(void) const;
+	int		toInt(void) const;
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
+
+	Fixed	&operator=(const Fixed &other);
+
+	bool	operator<(const Fixed &other) const;
+	bool	operator>(const Fixed &other) const;
+	bool	operator==(const Fixed &other) const;
+	bool	operator!=(const Fixed &other) const;
+	bool	operator<=(const Fixed &other) const;
+	bool	operator>=(const Fixed &other) const;
+
+	Fixed	operator+(const Fixed &other) const;
+	Fixed	operator-(const Fixed &other) const;
+	Fixed	operator*(const Fixed &other) const;
+	Fixed	operator/(const Fixed &other) const;
+
+	Fixed	&operator++(void);
+	Fixed	&operator--(void);
+	Fixed	operator++(int);
+	Fixed	operator--(int);
+
+	static Fixed &min(Fixed &f1, Fixed &f2);
+	static Fixed &max(Fixed &f1, Fixed &f2);
+	static const Fixed &min(const Fixed &f1, const Fixed &f2);
+	static const Fixed &max(const Fixed &f1, const Fixed &f2);
+};
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
+
+
+#endif  // C02_EX02_FIXED_HPP_
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 16:45:51 by ilinhard          #+#    #+#             */
+/*   Updated: 2023/04/27 01:40:18 by ilinhard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <Fixed.hpp>
+
+int main(void) {
+    Fixed a(42.42f);
+    Fixed b(21.21f);
+
+    std::cout << "a is " << a << std::endl;
+    std::cout << "b is " << b << std::endl;
+    std::cout << "a + b is " << a + b << std::endl;
+    std::cout << "a - b is " << a - b << std::endl;
+    std::cout << "a * b is " << a * b << std::endl;
+    std::cout << "a / b is " << a / b << std::endl;
+    std::cout << "a > b is " << (a > b) << std::endl;
+    std::cout << "a < b is " << (a < b) << std::endl;
+    std::cout << "a >= b is " << (a >= b) << std::endl;
+    std::cout << "a <= b is " << (a <= b) << std::endl;
+    std::cout << "a == b is " << (a == b) << std::endl;
+    std::cout << "a != b is " << (a != b) << std::endl;
+
+    Fixed c(a);
+    std::cout << "c is " << c << std::endl;
+    c.setRawBits(1234);
+    std::cout << "c is now " << c << std::endl;
+    
+    Fixed const d(123.456f);
+    std::cout << "d is " << d << std::endl;
+    std::cout << "d to int is " << d.toInt() << std::endl;
+    std::cout << "d to float is " << d.toFloat() << std::endl;
+
+    std::cout << "a++ is " << a++ << std::endl;
+    std::cout << "a is now " << a << std::endl;
+    std::cout << "++a is " << ++a << std::endl;
+    std::cout << "a is now " << a << std::endl;
+    std::cout << "c-- is " << c-- << std::endl;
+    std::cout << "c is now " << c << std::endl;
+    std::cout << "--c is " << --c << std::endl;
+    std::cout << "c is now " << c << std::endl;
+
+    std::cout    << "a : " << a 
+                << " | b : " << b 
+                << " | c : " << c 
+                << " | d : " << d
+                << std::endl;
+    std::cout << "min(a, b) is " << Fixed::min(a, b) << std::endl;
+    std::cout << "min(d, b) is " << Fixed::min(d, b) << std::endl;
+    std::cout << "max(a, b) is " << Fixed::max(a, b) << std::endl;
+    std::cout << "max(d, b) is " << Fixed::max(d, b) << std::endl;
+
+	Fixed e = a + b;
+
+	std::cout << "e is " << e << std::endl;
+	std::cout << "yo" << std::endl;
+
+    return 0;
+}

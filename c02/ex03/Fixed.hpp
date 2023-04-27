@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 04:18:15 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 01:48:33 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ class Fixed {
 	static Fixed &max(Fixed &f1, Fixed &f2);
 	static const Fixed &min(const Fixed &f1, const Fixed &f2);
 	static const Fixed &max(const Fixed &f1, const Fixed &f2);
-
 };
 
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
 
 
 #endif  // C02_EX02_FIXED_HPP_

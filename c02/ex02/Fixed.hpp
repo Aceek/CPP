@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 15:55:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/21 05:47:36 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 02:24:42 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Fixed {
  private:
-	int	_value;
+	int					_value;
 	static const int	_fractionalBits = 8;
 
  public:
@@ -58,5 +58,8 @@ class Fixed {
 	static const Fixed &min(const Fixed &f1, const Fixed &f2);
 	static const Fixed &max(const Fixed &f1, const Fixed &f2);
 };
+
+std::ostream& operator<<(std::ostream &out, const Fixed &fixed);
+
 
 #endif  // C02_EX02_FIXED_HPP_

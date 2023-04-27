@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:02:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/13 19:32:44 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 01:23:12 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,7 @@ int	Fixed::toInt(void) const {
 	return (this->_value >> _fractionalBits);
 }
 
-
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed) {
+	out << fixed.toFloat();
+	return (out);
+}
