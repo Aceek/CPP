@@ -6,27 +6,27 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:15:03 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/26 07:34:15 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 05:12:23 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureucrat.hpp"
+#include "Bureaucrat.hpp"
 
 int	main() {
 	try {
 		// test 0
-		Bureucrat def = Bureucrat();
+		Bureaucrat def = Bureaucrat();
 		std::cout << def;
 		std::cout << std::endl;
 
 		// test1 :
-		Bureucrat test = Bureucrat("George", 149);
+		Bureaucrat test = Bureaucrat("George", 149);
 		test.retrogradation();
 		std::cout << test;
 		std::cout << std::endl;
 
 		// test2 :
-		Bureucrat test2 = Bureucrat("Pauline", 1);
+		Bureaucrat test2 = Bureaucrat("Pauline", 1);
 		test2.gradation();
 		std::cout << test2;
 		std::cout << std::endl;

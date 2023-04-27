@@ -6,15 +6,15 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:37:20 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/27 04:33:50 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 05:10:56 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP_
 #define FORM_HPP_
 
-#include "Bureucrat.hpp"
-class Bureucrat;
+#include "Bureaucrat.hpp"
+class Bureaucrat;
 
 class Form {
  private:
@@ -37,7 +37,7 @@ class Form {
 	const int			&getSignedGrade() const;
 	const int			&getExecuteGrade() const;
 	
-	void				beSigned(const Bureucrat &b);
+	void				beSigned(const Bureaucrat &b);
 
 
 	class GradeTooLowException : public std::exception {

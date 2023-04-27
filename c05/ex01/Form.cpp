@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:38:32 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/27 04:56:28 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/27 05:10:51 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ const int			&Form::getExecuteGrade() const {
 	return (this->_executeGrade);
 }
 
-void				Form::beSigned(const Bureucrat &b) {
+void				Form::beSigned(const Bureaucrat &b) {
 	if (b.getGrade() <= this->getSignedGrade()) {
 		this->_validate = true;
 	} else {

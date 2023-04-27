@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureucrat.hpp                                      :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 04:34:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/27 04:10:20 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/26 07:25:55 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C05_EX00_BUREUCRAT_HPP_
-#define C05_EX00_BUREUCRAT_HPP_
+#ifndef C05_EX00_BUREAUCRAT_HPP_
+#define C05_EX00_BUREAUCRAT_HPP_
 
 #include <iostream>
-#include "Form.hpp"
 
-class Form;
-
-class Bureucrat {
+class Bureaucrat {
  private:
 	std::string const	_name;
 	int					_grade;
 
  public:
-	Bureucrat();
-	Bureucrat(std::string name, int grade);
-	Bureucrat(const Bureucrat &other);
-	~Bureucrat();
+	Bureaucrat();
+	Bureaucrat(std::string name, int grade);
+	Bureaucrat(const Bureaucrat &other);
+	~Bureaucrat();
 
-	Bureucrat		&operator=(const Bureucrat &other);
+	Bureaucrat		&operator=(const Bureaucrat &other);
 
 	std::string	getName() const;
 	int			getGrade() const;
 
 	void	gradation();
 	void	retrogradation();
-	void	signForm(Form &f);
 
 /*EXEPTION CLASS*/
 
@@ -50,6 +46,6 @@ class Bureucrat {
 	};
 };
 
-std::ostream &operator<<(std::ostream& os, const Bureucrat &b);
+std::ostream &operator<<(std::ostream& os, const Bureaucrat &b);
 
-#endif  // C05_EX00_BUREUCRAT_HPP_
+#endif  // C05_EX00_BUREAUCRAT_HPP_
