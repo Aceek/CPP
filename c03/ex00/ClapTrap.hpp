@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:02:29 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/20 02:32:59 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:58:32 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class ClapTrap {
 	void	attack(const std::string &target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
+	void	printStatus();
 };
 
 #endif  // C03_EX00_CLAPTRAP_HPP_

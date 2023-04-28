@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:02:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/16 16:13:35 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:02:11 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::~ClapTrap(void) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Class ClapTrap Copy constructor called" << std::endl;
 	*this = other;
 }
 
@@ -77,4 +77,10 @@ void	ClapTrap::beRepaired(unsigned int amout) {
 	} else if (_energyPoint <= 0) {
 		std::cout << "Clap trap " << _name << " out of energy" << std::endl;
 	}
+}
+
+void	ClapTrap::printStatus() {
+	std::cout << this->_name << " have " << this->_hitPoint
+			<< " points of life and "
+			<< this->_energyPoint << " of energy" << std::endl;
 }

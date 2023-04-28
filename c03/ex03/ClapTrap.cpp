@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:02:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/20 02:24:59 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:03:05 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ ClapTrap::~ClapTrap(void) {
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "ClapTrap Copy constructor called" << std::endl;
+	std::cout << "Class ClapTrap Copy constructor called" << std::endl;
 	*this = other;
 }
 
