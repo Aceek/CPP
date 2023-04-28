@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:45:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/27 10:44:34 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:41:08 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void) {
 	Point point3[3] = {Point(51.8f, -64.9f), Point(-20.4f, -17.7f),
 			Point(43.954f, 1.754f)};
 
-    Point inside0(5, 5);
+    Point inside0(4, 4);
     Point inside1(9.8f, 4.5f);
     Point inside2(-1.9, 10.9);
     Point inside3(20.354f, -16.8645);

@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 03:13:42 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/27 10:26:08 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 20:40:31 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ bool	bsp(const Point a, const Point b, const Point c, const Point point)
 	Fixed	res2 = getVector(b, c, point);
 	Fixed	res3 = getVector(c, a, point);
 
-	if ((res1 >= 0 && res2 >= 0 && res3 >= 0)
-		|| (res1 <= 0 && res2 <= 0 && res3 <= 0))
+	if ((res1 > 0 && res2 > 0 && res3 > 0)
+		|| (res1 < 0 && res2 < 0 && res3 < 0))
 		return (1);
 	return (0);
 }
