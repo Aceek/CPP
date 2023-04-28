@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 23:00:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/21 05:36:08 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:46:31 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ScavTrap : virtual public ClapTrap {
 
 	void	guardGate(void);
 	void	attack(const std::string &target);
+	void	printStatus();
 };
 
 #endif  // C03_EX03_SCAVTRAP_HPP_

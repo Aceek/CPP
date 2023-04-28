@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 04:01:17 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/21 05:35:22 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:44:17 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 	DiamondTrap	&operator=(const DiamondTrap &other);
 
 	void		whoAmI(void);
+	void		printStatus(void);
  private:
 	std::string	_name;
 };

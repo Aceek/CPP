@@ -6,29 +6,33 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 23:31:28 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/20 01:55:52 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:45:12 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void) : ClapTrap("default", 100, 50, 20) {
-	std::cout << "ScavTrap constructor called with name " << _name
-			<< std::endl;
+	std::cout << "[ ScavTrap ] - Default constructor called for "
+			<< _name << std::endl;
+
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
-	std::cout << "ScavTrap constructor called with name " << _name
-			<< std::endl;
+	std::cout << "[ ScavTrap ] - Default constructor called for "
+			<< _name << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other) {
-	std::cout << "ScavTrap copy constructor called" << std::endl;
 	*this = other;
+	std::cout << "[ ScavTrap ] - Copy constructor called for "
+			<< _name << std::endl;
+
 }
 
 ScavTrap::~ScavTrap(void) {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "[ ScavTrap ] - Destructor called for "
+			<< _name << std::endl;
 }
 
 ScavTrap	&ScavTrap::operator=(const ScavTrap &other) {
@@ -51,4 +55,10 @@ void	ScavTrap::attack(const std::string &target) {
 	} else {
 		std::cout << "ScavTrap " << _name << " out of energy" << std::endl;
 	}
+}
+
+void	ScavTrap::printStatus() {
+	std::cout << this->_name << " have " << this->_hitPoint
+			<< " points of life and "
+			<< this->_energyPoint << " of energy" << std::endl;
 }

@@ -6,21 +6,32 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 16:06:09 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/25 00:40:44 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:07:40 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+int main(void) {
+    ScavTrap trap("Sylvain");
+	ScavTrap trap2("Michel");
+	ScavTrap trap3(trap);
+	ScavTrap trap4;
+	trap4.operator=(trap2);
+	std::cout << std::endl;
 
-int	main() {
-	// ScavTrap dalek("dalek");
-	// ClapTrap dalek2("ilan");
+    trap.printStatus();
+    trap.attack("enemy");
+    trap.takeDamage(5);
+    trap.beRepaired(3);
+	trap.guardGate();
+	std::cout << std::endl;
 
-	// dalek2.attack("epee");
-	// dalek.attack("notme");
-	// dalek.takeDamage(15);
-	// dalek.beRepaired(10);
+    trap2.printStatus();
+	trap2.attack("enemy");
+    trap2.takeDamage(100);
+    trap2.beRepaired(50);
+	trap2.guardGate();
+	std::cout << std::endl;
 
-	ScavTrap test = ScavTrap("yo");
-    ScavTrap test1(test);
+    return 0;
 }

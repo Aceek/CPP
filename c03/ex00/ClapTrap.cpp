@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:02:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/28 22:02:11 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:30:12 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,24 @@
 
 ClapTrap::ClapTrap(void) : _name("default"), _hitPoint(10),
 	_energyPoint(10), _attackDamage(0) {
-		std::cout << "Class ClapTrap created with name : " << _name << std::endl;
+	std::cout << "[ ClapTrap ] - Default constructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10),
 	_energyPoint(10), _attackDamage(0) {
-		std::cout << "Class ClapTrap created with name : " << _name << std::endl;
+	std::cout << "[ ClapTrap ] - Default constructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap::~ClapTrap(void) {
-		std::cout << "Class ClapTrap destroyed with name : " << _name << std::endl;
+	std::cout << "[ ClapTrap ] - Destructor called for " << _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Class ClapTrap Copy constructor called" << std::endl;
 	*this = other;
+	std::cout << "[ ClapTrap ] - Copy constructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap	&ClapTrap::operator=(const ClapTrap &other) {

@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 15:02:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/28 22:02:28 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:27:42 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,34 @@
 
 ClapTrap::ClapTrap(void) : _name("default"), _hitPoint(10),
 	_energyPoint(10), _attackDamage(0) {
-		std::cout << "Class ClapTrap created with name : " << _name << std::endl;
+	std::cout << "[ ClapTrap ] - Default constructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoint(10),
 	_energyPoint(10), _attackDamage(0) {
-		std::cout << "Class ClapTrap created with name : " << _name << std::endl;
+	std::cout << "[ ClapTrap ] - Default constructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap::~ClapTrap(void) {
-		std::cout << "Class ClapTrap destroyed with name : " << _name << std::endl;
+	std::cout << "[ ClapTrap ] - Destructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other) {
-	std::cout << "Class ClapTrap Copy constructor called" << std::endl;
 	*this = other;
+	std::cout << "[ ClapTrap ] - Copy constructor called for "
+			<< _name << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hitPoint, int energyPoint,
 		int attackDamage) :
 		_name(name), _hitPoint(hitPoint), _energyPoint(energyPoint),
 		_attackDamage(attackDamage)  {
-	std::cout << "Class ClapTrap created with name : " << _name
-		<< std::endl;
+	std::cout << "[ ClapTrap ] - Default constructor called for "
+			<< _name << std::endl;
+
 }
 
 
@@ -86,4 +91,10 @@ void	ClapTrap::beRepaired(unsigned int amout) {
 	} else if (_energyPoint <= 0) {
 		std::cout << _name << " out of energy" << std::endl;
 	}
+}
+
+void	ClapTrap::printStatus() {
+	std::cout << this->_name << " have " << this->_hitPoint
+			<< " points of life and "
+			<< this->_energyPoint << " of energy" << std::endl;
 }

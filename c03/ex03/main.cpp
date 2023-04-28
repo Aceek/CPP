@@ -1,49 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 05:54:23 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/25 02:57:43 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:46:58 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 
-int main() {
-    DiamondTrap diam("Sylvain");
-    DiamondTrap diam2("Michel");
-    DiamondTrap diam3(diam);
-    DiamondTrap diam4;
-	diam4.operator=(diam2);
-    std::cout << std::endl;
+int main(void) {
+    DiamondTrap trap("Pauline");
+	DiamondTrap trap2("George");
+	DiamondTrap trap3(trap);
+	DiamondTrap trap4;
+	trap4.operator=(trap2);
+	std::cout << std::endl;
 
-    diam.attack("enemy");
-    diam.takeDamage(5);
-    diam.beRepaired(3);
-    diam.whoAmI();
-    std::cout << std::endl;
+    trap.printStatus();
+    trap.attack("enemy");
+    trap.takeDamage(5);
+    trap.beRepaired(3);
+	trap.guardGate();
+	trap.highFivesGuys();
+	trap.whoAmI();
+	std::cout << std::endl;
 
-    diam2.attack("enemy");
-    diam2.takeDamage(10);
-    diam2.beRepaired(2);
-    diam2.whoAmI();
-    std::cout << std::endl;
-
-    diam3.attack("enemy");
-    diam3.takeDamage(2);
-    diam3.beRepaired(5);
-    diam3.whoAmI();
-    std::cout << std::endl;
-
-    diam4.attack("enemy");
-    diam4.takeDamage(2);
-    diam4.beRepaired(5);
-    diam4.whoAmI();
-    std::cout << std::endl;
+    trap2.printStatus();
+	trap2.attack("enemy");
+    trap2.takeDamage(100);
+    trap2.beRepaired(50);
+	trap2.guardGate();
+	trap2.highFivesGuys();
+	trap2.whoAmI();
+	std::cout << std::endl;
 
     return 0;
 }

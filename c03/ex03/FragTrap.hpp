@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 23:00:16 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/21 05:35:47 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/04/28 22:45:02 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ class FragTrap : virtual public ClapTrap {
 	~FragTrap(void);
 
 	FragTrap &operator=(const FragTrap &other);
-	void highFivesGuys(void);
+
+	void	highFivesGuys(void);
+	void	printStatus();
 };
 
 #endif  // C03_EX03_FRAGTRAP_HPP_
