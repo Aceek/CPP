@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:58:37 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 03:54:47 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/05/21 07:14:23 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ void	Character::equip(AMateria *m) {
 }
 
 void	Character::unequip(int idx) {
-	if ((idx >= 0 && idx <= INVENTORY_SIZE) && this->inventory[idx] != NULL) {
-		std::cout << "unequip materia : " << this->inventory[idx]->getType()
-		<< std::endl;
+	if ((idx >= 0 && idx < INVENTORY_SIZE) && this->inventory[idx] != NULL) {
 		this->inventory[idx] = NULL;
 	} else {
 		std::cout << "Can't unequip Materia" << std::endl;

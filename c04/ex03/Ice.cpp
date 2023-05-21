@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:27:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 03:55:19 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/05/20 06:48:31 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Ice::Ice() : AMateria("ice") {
 	// std::cout << "Class Ice constructor called" << std::endl;
 }
 
-Ice::Ice(const Ice &other) {
+Ice::Ice(const Ice &other) : AMateria(other) {
 	*this = other;
 }
 

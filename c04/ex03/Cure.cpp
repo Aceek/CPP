@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 04:27:33 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/24 03:55:04 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/05/20 06:48:17 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ Cure::Cure() : AMateria("cure") {
 	// std::cout << "Class Cure constructor called" << std::endl;
 }
 
-Cure::Cure(const Cure &other) {
+Cure::Cure(const Cure &other) : AMateria(other) {
 	*this = other;
 }
 
