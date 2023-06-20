@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:38:32 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 01:35:59 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/20 03:06:08 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,8 @@ const char* Form::GradeTooHighException::what() const throw() {
 
 const char* Form::GradeTooLowException::what() const throw() {
 	return ("Grade too low form");
+}
+
+const char*	Form::NotSignedExeption::what() const throw() {
+	return ("Form not signed can't execute");
 }
