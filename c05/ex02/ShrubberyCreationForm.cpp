@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 02:38:57 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 03:37:06 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/20 03:44:35 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@
 			file << "    ***    " << std::endl;
 			file << std::endl;
 		} else {
-			std::cout << "Error creation file" << std::endl;
+			std::cerr << "Error creation file" << std::endl;
 		}
 		file.close();
 	}
