@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 03:54:17 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 02:09:10 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/21 23:14:50 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AAnimal {
 	std::string		getType(void) const;
 
 
- private:
+ protected:
 	std::string _type;
 };
 
