@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 04:46:39 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/23 02:23:16 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/21 23:41:11 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,33 @@
 
 int main()
 {
-
-	Cat *cat1 = new Cat;
-	Cat *cat2 = new Cat;
-	Dog *dog1 = new Dog;
-	Dog test(*dog1);
-	(void)test;
-
-	cat1->operator=(*cat2);
-
-	delete cat1;
-	delete cat2;
-	delete dog1;
-
-
-	const Dog* j = new Dog();
-	const Cat* i = new Cat();
-	const Cat	*k = new Cat();
-
-
+	// AAnimal test;
+	
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 	delete j;//should not create a leak
 	delete i;
-	delete k;
+	std::cout << std::endl;
 
-	return 0;
+	AAnimal	*animalList[10];
+	
+	for (int i = 0; i < 10 ; i++) {
+		if (i % 2 == 0) {
+			animalList[i] = new Cat();
+		} else {
+			animalList[i] = new Dog();
+		}
+	}
+	std::cout	<< std::endl;
+
+	for (int i = 0; i < 10 ; i++) {
+		std::cout	<< "Random " << animalList[i]->getType() << ": " << std::flush;
+		animalList[i]->makeSound();
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	
+	for (int i = 0; i < 10 ; i++) {
+		delete animalList[i];
+	}
 }
