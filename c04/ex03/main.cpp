@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 00:36:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/05/21 07:14:50 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/21 23:42:43 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int	main()
 	delete me;
 	delete src;
 
+
+	std::cout << "----------------TEST----------------------------" << std::endl;
 
 	/*TEST 2 */
 	IMateriaSource *src1 = new MateriaSource();
