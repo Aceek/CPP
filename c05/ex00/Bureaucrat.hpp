@@ -28,11 +28,11 @@ class Bureaucrat {
 
 	Bureaucrat		&operator=(const Bureaucrat &other);
 
-	std::string	getName() const;
-	int			getGrade() const;
+	std::string const	&getName() const;
+	int					getGrade() const;
 
-	void	gradation();
-	void	retrogradation();
+	void				gradation();
+	void				retrogradation();
 
 /*EXEPTION CLASS*/
 

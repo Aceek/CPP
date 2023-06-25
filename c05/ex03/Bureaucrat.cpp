@@ -28,7 +28,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name) {
 		<< this->_grade << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other) {
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name) {
 	*this = other;
 }
 
@@ -38,14 +38,12 @@ Bureaucrat::~Bureaucrat() {
 
 Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &other) {
 	if (this != &other) {
-		std::string *tmp = const_cast<std::string*>(&this->_name);
-		*tmp = other._name;
 		this->_grade = other._grade;
 	}
 	return (*this);
 }
 
-std::string	Bureaucrat::getName() const {
+std::string const &Bureaucrat::getName() const {
 	return (this->_name);
 }
 

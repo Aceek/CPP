@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:37:20 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 03:06:20 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 02:06:59 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ class Form {
 
 	class GradeTooLowException : public std::exception {
 	 public:
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 
 	class GradeTooHighException : public std::exception {
 	 public:
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 
 	class NotSignedExeption : public std::exception {
 	 public:
-		virtual const char* what() const throw();
+		const char* what() const throw();
 	};
 
 };

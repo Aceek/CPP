@@ -31,12 +31,12 @@ class Bureaucrat {
 
 	Bureaucrat		&operator=(const Bureaucrat &other);
 
-	std::string	getName() const;
-	int			getGrade() const;
+	std::string const	&getName() const;
+	int					getGrade() const;
 
-	void	gradation();
-	void	retrogradation();
-	void	signForm(Form &f);
+	void				gradation();
+	void				retrogradation();
+	void				signForm(Form &f);
 
 /*EXEPTION CLASS*/
 

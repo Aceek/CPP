@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:38:32 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 01:35:59 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 02:15:23 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Form::Form(int signedGrade, int executeGrade, std::string name) : _name(name),
 		" and executeGrade : " << this->_executeGrade <<  std::endl;
 }
 
-Form::Form(const Form &other) {
+Form::Form(const Form &other) : _name(other._name) {
 	*this = other;
 }
 
@@ -43,8 +43,6 @@ Form::~Form() {
 Form	&Form::operator=(const Form &other) {
 	if (this != &other)
 	{
-		std::string *tmp = const_cast<std::string*>(&this->_name);
-		*tmp = other._name;
 		this->_validate = other._validate;
 		this->_signedGrade = other._signedGrade;
 		this->_executeGrade = other._executeGrade;
