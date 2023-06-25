@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:15:03 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 05:43:06 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 03:16:58 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int main(void)
 	Form* Robotomy = test.makeForm("Robotomy", "George");
 	Form* President = test.makeForm("Presidential", "Bill");
 	test.makeForm("awd", "Bill");
-	
 
+	
 	std::cout << "---------CREATE BUREAUCRATS AND FORMS---------" << std::endl;
 
 	Bureaucrat	vasilia("Vasilia", 146);

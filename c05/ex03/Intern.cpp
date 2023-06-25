@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 05:00:43 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 05:40:47 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 03:19:56 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,25 @@ Intern	&Intern::operator=(const Intern &other) {
 	return (*this);
 }
 
-Form	*Intern::makePresidential(std::string target) {
-	return (new PresidentialPardonForm(target));
-}
-
-Form	*Intern::makeRobotomy(std::string target) {
-	return (new RobotomyRequestForm(target));
-}
-
-Form	*Intern::makeShrubbery(std::string target) {
-	return (new ShrubberyCreationForm(target));
-}
-
 Form	*Intern::makeForm(std::string formName, std::string targetName) {
+	int			i = 0;
 	std::string formNames[] = {"Presidential", "Robotomy", "Shrubbery"};
-	typedef Form* (Intern::*multiForms)(std::string);
-	multiForms functionsForms[] = {&Intern::makePresidential, &Intern::makeRobotomy,
-			&Intern::makeShrubbery};
-	for (int i = 0; i < 3; i++)
-	{
-		if (formName == formNames[i]) {
-			Form *res = (this->*functionsForms[i])(targetName);
-			return (res);
-		}
+
+	for (i = 0; i < 3 && formNames[i] != formName; i++) {}
+	
+	switch (i) {
+	case 0:
+		std::cout << "Intern create : " << formName << std::endl;
+		return (new PresidentialPardonForm(targetName));
+	case 1:
+		std::cout << "Intern create : " << formName << std::endl;
+		return (new RobotomyRequestForm(targetName));
+	case 2:
+		std::cout << "Intern create : " << formName << std::endl;
+		return (new ShrubberyCreationForm(targetName));
+	default:
+		std::cerr << "No form match this formName" << std::endl;
 	}
-	std::cerr << "No form match this formName" << std::endl;
+	
 	return (NULL);
 }

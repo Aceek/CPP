@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 04:47:18 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 05:22:25 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 03:17:25 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,7 @@ class Intern {
 	~Intern();
 	Intern(const Intern &other);
 	
-	Intern &operator=(const Intern &other);
-
-	Form	*makePresidential(std::string target);
-	Form	*makeRobotomy(std::string target);
-	Form	*makeShrubbery(std::string target);
+	Intern	&operator=(const Intern &other);
 	Form	*makeForm(std::string formName, std::string targetName);
 
 };

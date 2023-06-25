@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:15:03 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/04/27 05:12:23 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 02:30:56 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,27 @@
 int	main() {
 	try {
 		// test 0
+		std::cout << "------------TEST0------------" << std::endl;
 		Bureaucrat def = Bureaucrat();
 		std::cout << def;
 		std::cout << std::endl;
+		// Should throw exeption : 
+		// Bureaucrat jean = Bureaucrat("jean", 170);
+		
+		
 
 		// test1 :
+		std::cout << "------------TEST1------------" << std::endl;
 		Bureaucrat test = Bureaucrat("George", 149);
 		test.retrogradation();
 		std::cout << test;
 		std::cout << std::endl;
+		// Should throw exeption : 
+		// test.retrogradation();
+		// std::cout << test;
 
 		// test2 :
+		std::cout << "------------TEST2------------" << std::endl;
 		Bureaucrat test2 = Bureaucrat("Pauline", 1);
 		test2.gradation();
 		std::cout << test2;
