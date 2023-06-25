@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 03:17:07 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 05:43:29 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 05:48:51 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@
 #include <cstdlib>
 #include <cmath>
 
-bool	isValidInput(const std::string& litteral);
-bool	displayIfChar(const std::string&	litteral);
-void	displayChar(const double nb);
-void	displayInt(const double nb);
-void	displayFloat(const double nb);
-void	displayDouble(const double nb);
+
 
 
 class ScalarConverter {
@@ -31,7 +26,13 @@ class ScalarConverter {
 	ScalarConverter &operator=(const ScalarConverter &other);
 
 
-	void	static	convert(std::string litteral);
+	void static	convert(std::string litteral);
+	bool static isValidInput(const std::string& litteral);
+	bool static	displayIfChar(const std::string&	litteral);
+	void static	displayChar(const double nb);
+	void static	displayInt(const double nb);
+	void static	displayFloat(const double nb);
+	void static	displayDouble(const double nb);
 	
  private:
 };

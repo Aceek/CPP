@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 03:42:31 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 05:45:55 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 05:49:17 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ScalarConverter &ScalarConverter::operator=(const ScalarConverter &other) {
 	return (*this);
 }
 
-bool	isValidInput(const std::string &litteral) {
+bool	ScalarConverter::isValidInput(const std::string &litteral) {
 	int					dot = 0;
 	long unsigned int	i = 0;
 	long unsigned int	max = litteral.length();
@@ -53,7 +53,7 @@ bool	isValidInput(const std::string &litteral) {
 	return (true);
 }
 
-bool	displayIfChar(const std::string& litteral) {
+bool	ScalarConverter::displayIfChar(const std::string& litteral) {
 	
 	if (litteral[0] && !litteral[1] && !std::isdigit(litteral[0])) {
 		if (std::isprint(litteral[0])) {
@@ -69,7 +69,7 @@ bool	displayIfChar(const std::string& litteral) {
 	return (false);
 }
 
-void	displayChar(const double nb) {
+void	ScalarConverter::displayChar(const double nb) {
 	char c = static_cast<char>(nb);
 
 	if (!std::isfinite(nb) || nb > CHAR_MAX || nb < CHAR_MIN) {
@@ -81,7 +81,7 @@ void	displayChar(const double nb) {
 	}
 }
 
-void	displayInt(const double nb) {
+void	ScalarConverter::displayInt(const double nb) {
 	if (!std::isfinite(nb) || nb > INT_MAX || nb < INT_MIN) {
 		std::cout << "int : Impossible" << std::endl;
 	} else {
@@ -89,7 +89,7 @@ void	displayInt(const double nb) {
 	}
 }
 
-void	displayFloat(const double nb) {
+void	ScalarConverter::displayFloat(const double nb) {
 	int	compare = static_cast<int>(nb);
 	if (nb == compare) {
 		std::cout << "float : " << static_cast<float>(nb) << ".0f" << std::endl;
@@ -98,7 +98,7 @@ void	displayFloat(const double nb) {
 	}
 }
 
-void	displayDouble(const double nb) {
+void	ScalarConverter::displayDouble(const double nb) {
 	int compare = static_cast<int>(nb);
 	
 	if (compare == nb) {
