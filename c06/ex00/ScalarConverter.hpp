@@ -6,14 +6,21 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 03:17:07 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/21 04:42:29 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/25 05:43:29 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <limits>
+#include <climits>
+#include <cstdlib>
+#include <cmath>
 
-bool			isValidInput(std::string litteral);
+bool	isValidInput(const std::string& litteral);
+bool	displayIfChar(const std::string&	litteral);
+void	displayChar(const double nb);
+void	displayInt(const double nb);
+void	displayFloat(const double nb);
+void	displayDouble(const double nb);
 
 
 class ScalarConverter {
@@ -27,8 +34,4 @@ class ScalarConverter {
 	void	static	convert(std::string litteral);
 	
  private:
-	static int		_int;
-	static float	_float;
-	static double	_double;
-	static char		_char;
 };
