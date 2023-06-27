@@ -6,17 +6,17 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 03:17:07 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 06:05:03 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/27 09:06:08 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef C06_EX00_SCALARCONVERTER_HPP_
+#define C06_EX00_SCALARCONVERTER_HPP_
 
 #include <iostream>
 #include <climits>
 #include <cstdlib>
 #include <cmath>
-
-
-
 
 class ScalarConverter {
  public:
@@ -36,3 +36,5 @@ class ScalarConverter {
 	
  private:
 };
+
+#endif  // C06_EX00_SCALARCONVERTER_HPP_
