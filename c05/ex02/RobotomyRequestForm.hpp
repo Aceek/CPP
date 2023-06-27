@@ -6,9 +6,12 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 03:49:10 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 04:21:03 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/06/27 08:57:26 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef C05_EX02_ROBOTOMYREQUESTFORM_HPP_
+#define C05_EX02_ROBOTOMYREQUESTFORM_HPP_
 
 #include "Form.hpp"
 #include <cstdlib>
@@ -29,3 +32,5 @@ class RobotomyRequestForm : public Form {
 	std::string	_target;
 	
 };
+
+#endif  // C05_EX02_ROBOTOMYREQUESTFORM_HPP_
