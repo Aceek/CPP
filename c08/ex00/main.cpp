@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 17:54:21 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/07/03 21:25:35 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/03 21:33:58 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ int	main(int ac, char **av) {
 	int	array[] = {0, 1, 2, 8, 9, 12, 15, -2147483648};
 	std::vector<int> test(array, array + sizeof(array) / sizeof(array[0]));
 	std::list<int> test2(array, array + sizeof(array) / sizeof(array[0]));
+	std::deque<int> test3(array, array + sizeof(array) / sizeof(array[0]));
 
 	easyfind(test, number);
 	easyfind(test2, number);
+	easyfind(test3, number);
 
 	return (EXIT_SUCCESS);
 }
