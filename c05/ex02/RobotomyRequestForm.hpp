@@ -6,18 +6,18 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 03:49:10 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/27 08:57:26 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 05:00:09 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C05_EX02_ROBOTOMYREQUESTFORM_HPP_
 #define C05_EX02_ROBOTOMYREQUESTFORM_HPP_
 
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <cstdlib>
 #include <ctime>
 
-class RobotomyRequestForm : public Form { 
+class RobotomyRequestForm : public AForm { 
  public:
 	RobotomyRequestForm();
 	RobotomyRequestForm(std::string target);

@@ -6,21 +6,21 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 02:38:57 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 04:25:17 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 05:00:23 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
 	RobotomyRequestForm::RobotomyRequestForm(std::string target)
-		: Form(72, 45, "RobotomyRequestForm"), _target(target) {
+		: AForm(72, 45, "RobotomyRequestForm"), _target(target) {
 			std::cout << "RobotomyRequestForm created with name : " << this->getName()
 				<< " and signed Grade : " << this->getSignedGrade()
 				<< " and execute Grade : " << this->getExecuteGrade() << std::endl; 
 	}
 
 	RobotomyRequestForm::RobotomyRequestForm()
-	: Form(72, 45, "RobotomyRequestForm"), _target("Default") {
+	: AForm(72, 45, "RobotomyRequestForm"), _target("Default") {
 			std::cout << "RobotomyRequestForm created with name : " << this->getName()
 				<< " and signed Grade : " << this->getSignedGrade()
 				<< " and execute Grade : " << this->getExecuteGrade() << std::endl; 
@@ -30,7 +30,7 @@
 		std::cout << "RobotomyRequestForm destructod called" << std::endl;	
 	}
 
-	RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : Form(other) {
+	RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other) {
 		*this = other;
 	}
 	
@@ -43,9 +43,9 @@
 	
 	void	RobotomyRequestForm::execute(Bureaucrat const & executor) const {
 		if (!this->getValidate()) {
-			throw Form::NotSignedExeption();
+			throw AForm::NotSignedExeption();
 		} else if (executor.getGrade() > this->getExecuteGrade()) {
-			throw Form::GradeTooLowException();
+			throw AForm::GradeTooLowException();
 		}
 
     	std::srand(static_cast<unsigned int>(std::time(0)));

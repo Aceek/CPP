@@ -6,16 +6,16 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 01:53:13 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/27 08:58:16 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 05:00:29 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C05_EX02_SHRUBBERYCREATIONFORM_HPP_
 #define C05_EX02_SHRUBBERYCREATIONFORM_HPP_
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class ShrubberyCreationForm : public Form { 
+class ShrubberyCreationForm : public AForm { 
  public:
 	ShrubberyCreationForm();
 	ShrubberyCreationForm(std::string target);
