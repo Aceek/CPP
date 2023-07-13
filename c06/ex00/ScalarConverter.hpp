@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 03:17:07 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/27 09:06:08 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 05:31:47 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,6 @@
 
 class ScalarConverter {
  public:
-	ScalarConverter();
-	~ScalarConverter();
-	ScalarConverter(const ScalarConverter &other);
-	ScalarConverter &operator=(const ScalarConverter &other);
-
-
 	void static	convert(std::string litteral);
 	bool static isValidInput(const std::string& litteral);
 	bool static	displayIfChar(const std::string&	litteral);
@@ -35,6 +29,10 @@ class ScalarConverter {
 	void static	displayDouble(const double nb);
 	
  private:
+ 	ScalarConverter();
+	~ScalarConverter();
+	ScalarConverter(const ScalarConverter &other);
+	ScalarConverter &operator=(const ScalarConverter &other);
 };
 
 #endif  // C06_EX00_SCALARCONVERTER_HPP_
