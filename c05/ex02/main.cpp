@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:15:03 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/20 04:32:48 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 05:10:36 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int main(void)
 	boss.signForm(Robotomy);
 	boss.executeForm(Robotomy);
 	
-	std::cout << "---------------EXECUTING ROBOTOMY------------" << std::endl;
+	std::cout << "---------------EXECUTING PRESIDENTIAL--------" << std::endl;
 	vasilia.executeForm(President);
 	vasilia.signForm(President);
 	boss.signForm(President);
