@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 03:17:46 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/27 09:07:06 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 05:45:15 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,15 @@ struct Data
 	std::string	raw;
 };
 
-
 class Serializer {
  public:
+	static uintptr_t	serialize(Data *ptr);
+	static Data*		deserialize(uintptr_t raw);
+ private:
 	Serializer();
 	~Serializer();
 	Serializer(const Serializer &other);
-
 	Serializer			&operator=(const Serializer &other);
-
-	static uintptr_t	serialize(Data *ptr);
-	static Data*		deserialize(uintptr_t raw);
 };
 
 #endif  // C06_EX01_SERIALIZER_HPP_
