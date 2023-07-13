@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:15:03 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 03:16:58 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 04:42:50 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int main(void)
 
 	std::cout << "----------------CREATE INTERN----------------" << std::endl;
 	Intern test;
-	Form* Shrubbery1 = test.makeForm("Shrubbery", "jardin");
-	Form* Shrubbery2 = test.makeForm("Shrubbery", "balcon");
-	Form* Robotomy = test.makeForm("Robotomy", "George");
-	Form* President = test.makeForm("Presidential", "Bill");
+	AForm* Shrubbery1 = test.makeForm("Shrubbery", "jardin");
+	AForm* Shrubbery2 = test.makeForm("Shrubbery", "balcon");
+	AForm* Robotomy = test.makeForm("Robotomy", "George");
+	AForm* President = test.makeForm("Presidential", "Bill");
 	test.makeForm("awd", "Bill");
 
 	

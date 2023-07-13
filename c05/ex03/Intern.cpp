@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 05:00:43 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 03:19:56 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 04:42:31 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Intern	&Intern::operator=(const Intern &other) {
 	return (*this);
 }
 
-Form	*Intern::makeForm(std::string formName, std::string targetName) {
+AForm	*Intern::makeForm(std::string formName, std::string targetName) {
 	int			i = 0;
 	std::string formNames[] = {"Presidential", "Robotomy", "Shrubbery"};
 

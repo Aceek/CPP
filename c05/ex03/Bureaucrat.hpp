@@ -14,9 +14,9 @@
 #define C05_EX00_BUREAUCRAT_HPP_
 
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class Form;
+class AForm;
 
 class Bureaucrat {
  private:
@@ -36,9 +36,9 @@ class Bureaucrat {
 
 	void				gradation();
 	void				retrogradation();
-	void				signForm(Form &f);
+	void				signForm(AForm &f);
 
-	void	executeForm(Form const & form);
+	void	executeForm(AForm const & form);
 
 /*EXEPTION CLASS*/
 

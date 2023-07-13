@@ -6,16 +6,16 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 04:27:51 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/27 09:08:12 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 04:40:24 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef C05_EX03_PRESIDENTIALPARDONFORM_HPP_
 #define C05_EX03_PRESIDENTIALPARDONFORM_HPP_
 
-#include "Form.hpp"
+#include "AForm.hpp"
 
-class PresidentialPardonForm : public Form { 
+class PresidentialPardonForm : public AForm { 
  public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(std::string target);

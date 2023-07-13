@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:37:20 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 02:06:44 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 04:25:20 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ class Form {
  private:
 	std::string const	_name;
 	bool				_validate;
-	int					_signedGrade;
-	int					_executeGrade;
+	const int			_signedGrade;
+	const int			_executeGrade;
 
  public:
 	Form();
-	Form(int signedGrade, int executeGrade, std::string name);
+	Form(const int signedGrade, const int executeGrade, std::string name);
 	Form(const Form &other);
 	virtual ~Form();
 	

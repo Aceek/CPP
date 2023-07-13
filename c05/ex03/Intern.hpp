@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 04:47:18 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/27 09:00:39 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 04:42:47 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Intern {
 	Intern(const Intern &other);
 	
 	Intern	&operator=(const Intern &other);
-	Form	*makeForm(std::string formName, std::string targetName);
+	AForm	*makeForm(std::string formName, std::string targetName);
 
 };
 

@@ -69,7 +69,7 @@ void	Bureaucrat::retrogradation() {
 			<< this->getGrade() << std::endl;
 }
 
-void	Bureaucrat::signForm(Form &f) {
+void	Bureaucrat::signForm(AForm &f) {
 	try
 	{
 		f.beSigned(*this);
@@ -82,7 +82,7 @@ void	Bureaucrat::signForm(Form &f) {
 	}
 }
 
-void	Bureaucrat::executeForm(Form const & f) {
+void	Bureaucrat::executeForm(AForm const & f) {
 	try
 	{
 		f.execute(*this);

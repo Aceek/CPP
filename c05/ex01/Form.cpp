@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 22:38:32 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/06/25 02:15:23 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 04:22:59 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,22 @@ Form::Form() : _name("default"), _validate(false), _signedGrade(1), _executeGrad
 			" and executeGrade : " << this->_executeGrade <<  std::endl;
 }
 
-Form::Form(int signedGrade, int executeGrade, std::string name) : _name(name),
-	_validate(false) {
+Form::Form(const int signedGrade, const int executeGrade, std::string name)
+		: _name(name),
+	_validate(false), _signedGrade(signedGrade), _executeGrade(executeGrade) {
 	if (signedGrade < 1 || executeGrade < 1) {
 		throw Form::GradeTooHighException();
 	} else if (signedGrade > 150 || executeGrade > 150) {
 		throw Form::GradeTooLowException();
 	}
-	_signedGrade = signedGrade;
-	_executeGrade = executeGrade;
 	std::cout << "Form  create with name : " << this->_name <<
 		" and signedGrade : " << this->_signedGrade <<
 		" and executeGrade : " << this->_executeGrade <<  std::endl;
 }
 
-Form::Form(const Form &other) : _name(other._name) {
+Form::Form(const Form &other)
+		: _name(other._name), _signedGrade(other._signedGrade),
+		_executeGrade(other._executeGrade) {
 	*this = other;
 }
 
@@ -41,11 +42,8 @@ Form::~Form() {
 }
 
 Form	&Form::operator=(const Form &other) {
-	if (this != &other)
-	{
+	if (this != &other) {
 		this->_validate = other._validate;
-		this->_signedGrade = other._signedGrade;
-		this->_executeGrade = other._executeGrade;
 	}
 	return (*this);
 }
