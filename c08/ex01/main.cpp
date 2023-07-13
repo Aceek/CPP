@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 02:01:24 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/07/04 04:05:13 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/13 06:35:23 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main() {
 		std::cout << "Vector1 : " << test << std::endl;
 		std::cout << "LonguestSpan = " << test.longuestSpan() << std::endl;
 		std::cout << "ShortestSpan = " << test.shortestSpan() << std::endl;
-		test.addNumber(12);
+		test.addNumber(12); // should throw exception
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
@@ -43,10 +43,8 @@ int	main() {
 		test2.addNumbers(myVector.begin(), myVector.end());
 		std::cout << "LonguestSpan = " << test2.longuestSpan() << std::endl;
 		std::cout << "ShortestSpan = " << test2.shortestSpan() << std::endl;
-		// std::cout << test2 << std::endl;
-	} catch(const std::exception& e) {
+		// std::cout << test2 << std::endl; // show all tab
+ 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
-	
 }
-
