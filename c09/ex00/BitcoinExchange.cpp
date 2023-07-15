@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:40:59 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/07/15 09:45:23 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/15 09:55:08 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ BitcoinExchange::BitcoinExchange(const std::string &filename) {
 	
 	std::string line;
 	std::getline(file, line); // skip header
+	if (line != "date,exchange_rate") {
+		throw std::runtime_error("Error : Invalid header, format must be : "
+				"\"date,exchange_rate\" in database");
+	}
 	while (getline(file, line)) {
    		std::istringstream	iss(line);
 		std::string			date;
@@ -139,6 +143,11 @@ void	BitcoinExchange::ProcessInput(const std::string &filename) {
 	}
 
 	std::getline(file, line);  // skip header line
+	if (line != "date | value") {
+		std::cerr << "Invalid header, format should be : \"date | value\"" << 
+				"in input file" << std::endl;
+		return ;
+	}
 	while (getline(file, line)) {
 		std::string			date;
 		char				del;
