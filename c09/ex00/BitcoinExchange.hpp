@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:34:09 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/07/15 08:31:44 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/15 09:43:24 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class BitcoinExchange {
  private:
-	std::map<std::string, double> exchangeRates;
+	std::map<std::string, double> _exchangeRates;
 
  public:
 	BitcoinExchange(const std::string &filename);
@@ -28,13 +28,12 @@ class BitcoinExchange {
 	BitcoinExchange(const BitcoinExchange &other);
 	BitcoinExchange &operator=(const BitcoinExchange &other);
 
-
 	bool	ValidateValue(const double &rate) const;
 	bool	ValidateDate(std::string &date) const;
 	void	PrintMap();
 	void	ProcessInput(const std::string &filename);
 	double	GetExchangeRate(const std::string &date) const;
-	bool	EraseSpace(std::string &line);
+	bool	ValidateSpace(const std::string &line) const;
 	
 };
 

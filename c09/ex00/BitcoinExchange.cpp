@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/15 05:40:59 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/07/15 09:03:24 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/07/15 09:45:23 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ BitcoinExchange::BitcoinExchange(const std::string &filename) {
 		iss >> rate;
 		if (!date.empty() && iss && (iss.peek() == EOF || iss.peek() == '\n')
 				&& ValidateDate(date)) {
-			this->exchangeRates[date] = rate;
+			this->_exchangeRates[date] = rate;
 		} else {
 			std::cerr << "Error: format in database =>"  << line << std::endl;
 		}
@@ -47,7 +47,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange &other) {
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
 	if (this != &other) {
-		this->exchangeRates = other.exchangeRates;
+		this->_exchangeRates = other._exchangeRates;
 	}
 	return (*this);
 }
@@ -56,7 +56,7 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other) {
 void	BitcoinExchange::PrintMap() {
 	std::map<std::string, double>::iterator it;
 
-	for (it = this->exchangeRates.begin(); it != this->exchangeRates.end(); it++) {
+	for (it = this->_exchangeRates.begin(); it != this->_exchangeRates.end(); it++) {
 		std::cout << "data = " << it->first << " Rate = " << it->second << std::endl;
 	}
 	
@@ -64,7 +64,6 @@ void	BitcoinExchange::PrintMap() {
 
 bool	BitcoinExchange::ValidateValue(const double &rate) const {
 	if (rate < 0 || rate > 1000) {
-		std::cerr << "Rate value not contain between 0 and 1000." << std::endl; 
 		return (false);
 	}
 	return (true);
@@ -101,32 +100,34 @@ bool	BitcoinExchange::ValidateDate(std::string &date) const {
 
 double	BitcoinExchange::GetExchangeRate(const std::string &date) const {
 	std::map<std::string, double>::const_iterator it;
-	it = this->exchangeRates.lower_bound(date);
-	if (it != exchangeRates.end()) {
+	it = this->_exchangeRates.lower_bound(date);
+	if (it != _exchangeRates.end()) {
 		return (it->second);
-	} else if (!exchangeRates.empty()) {
+	} else if (!_exchangeRates.empty()) {
 		return ((--it)->second);
 	}
 	return (-1);
 }
 
+bool	BitcoinExchange::ValidateSpace(const std::string &line) const {
+	std::string::size_type	delimiter = line.find("|");
+	int						count = 0;
 
-bool	BitcoinExchange::EraseSpace(std::string &line) {
-	bool nb_space = false;
-
-	std::string::size_type delimiter = line.find("|");
-	if (delimiter != std::string::npos) {
-		if (delimiter > 0 && line[delimiter - 1] == ' ' && delimiter + 1 < line.length() && line[delimiter + 1] == ' ')
-			nb_space = true;
-	}
-	
 	for (size_t i = 0; i < line.size(); i++) {
 		if (line[i] == ' ') {
-			line.erase(i, 1);
-			--i;
+			count++;
 		}
 	}
-	return (nb_space);
+	if (count != 2) {
+		return (false);
+	}
+	if (delimiter != std::string::npos) {
+		if ((delimiter > 0 && line[delimiter - 1] != ' ') || (delimiter + 1
+				< line.length() && line[delimiter + 1] != ' ')) {
+					return (false);
+		}
+	}
+	return (true);
 }
 
 void	BitcoinExchange::ProcessInput(const std::string &filename) {
@@ -140,24 +141,31 @@ void	BitcoinExchange::ProcessInput(const std::string &filename) {
 	std::getline(file, line);  // skip header line
 	while (getline(file, line)) {
 		std::string			date;
-		std::string			line_cpy = line;
+		char				del;
 		double				value;
 		double				rate;
-		bool				nb_space = EraseSpace(line);
    		std::istringstream	iss(line);
 
-		std::getline(iss, date, '|');
-		iss >> value;
+		if (!(iss >> date >> del >> value)) {
+			std::cerr << "Error parsing input line : " << line <<  std::endl;
+			continue;
+		}
+		if (!ValidateDate(date)) {
+			std::cerr << "Error date invalid in input file : " << line << std::endl;
+			continue;
+		}
+		if (!ValidateValue(value)) {
+			std::cerr << "Error value not contain between [1-1000] : " << line << std::endl;
+			continue;
+		}
 		rate = GetExchangeRate(date);
 		if (rate == -1) {
-			std::cerr << "Can't find rate change in database" << std::endl;
-		} else if (!date.empty() && iss && (iss.peek() == EOF || iss.peek() == '\n') && nb_space
-				&& ValidateDate(date) && ValidateValue(value) && rate != -1) {
-					std::cout << date << " => " << value << " = "
-							<< value * rate << std::endl;
-		} else {
-			std::cerr << "Error: format in inputfile =>"  << line_cpy << std::endl;
+			std::cerr << "Error in rate exchange" << line << std::endl;
+			continue;
 		}
+		if (!ValidateSpace(line)) {
+			std::cerr << "Error space not good format : " << line << std::endl;
+		}
+		std::cout << date << " => " << value << " = " << value * rate << std::endl;
 	}
-	
 }
