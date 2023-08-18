@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/26 04:13:36 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/07/13 05:44:00 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/08/18 21:26:14 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,16 +53,16 @@ void	Base::identify(Base *p) {
 void	Base::identify(Base &p) {
 	std::string identify = "no class";
 	try {
-		dynamic_cast<A&>(p);
+		(void)dynamic_cast<A&>(p);
 		identify = "class A";
 	} catch(const std::exception& e) {}
 	try {
-		dynamic_cast<B&>(p);
+		(void)dynamic_cast<B&>(p);
 		identify = "class B";
 	}
 	catch(const std::exception& e) {}
 	try {
-		dynamic_cast<C&>(p);
+		(void)dynamic_cast<C&>(p);
 		identify = "class C";
 	}
 	catch(const std::exception& e) {}

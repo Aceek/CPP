@@ -3,7 +3,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = main.cpp Base.cpp
 OBJS = $(SRCS:.cpp=.o)
-NAME = Serializer
+NAME = Base
 
 HEADER = Base.hpp
 INCLUDES = -I.
