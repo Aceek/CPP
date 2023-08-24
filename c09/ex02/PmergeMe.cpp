@@ -6,7 +6,7 @@
 /*   By: ilinhard <ilinhard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 11:06:47 by ilinhard          #+#    #+#             */
-/*   Updated: 2023/08/24 15:12:28 by ilinhard         ###   ########.fr       */
+/*   Updated: 2023/08/24 15:18:10 by ilinhard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,4 +115,3 @@ void	PmergeMe::execSort() {
 	std::cout << "Time to process a range of " << this->sortedList.size()
 		<< " element with std::list : " << timeList << " us" <<  std::endl;
 }
-
